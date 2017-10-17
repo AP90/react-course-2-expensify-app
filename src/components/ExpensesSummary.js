@@ -15,30 +15,6 @@ export const ExpensesSummary = ({expenseCount, expensesTotal}) => {
 }
 
 
-
-
-// export class ExpenseSummary extends React.Component {
-//     state = {
-//         expenseCount: this.props.expenses.length,
-//         expensesTotal: expensesTotal(this.props.expenses)
-//     }
-
-//     render() {
-//         return (
-//             <div>
-//                 <h3>Viewing {this.state.expenseCount} expenses totalling {numeral(this.state.expensesTotal / 100).format("$0,0.00")}</h3>
-//             </div>
-//         )
-//     }
-// };
-
-// const mapStateToProps = (state) => {
-//     return {
-//         filters: state.filters,
-//         expenses: state.expenses
-//     }
-// };
-
 const mapStateToProps = (state) => {
     const visibleExpenses = selectExpenses(state.expenses, state.filters);
     return {
