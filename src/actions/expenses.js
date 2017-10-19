@@ -59,13 +59,26 @@ export const startRemoveExpense = ({id} = {}) => {
 
 
 
-
 export const editExpense = (id, updates) => ({
     type: "EDIT_EXPENSE",
     id,
     updates
 });
 
+//  create starteditexpense 
+// test with should edit expenses from firebase
+// use starteditexpense in edit expense page
+//  adjust edit expense page tests
+
+export const startEditExpense = (id, updates) => {
+    return (dispatch) => {
+        return database.ref(`expenses/{id}`)
+            .update(updates)
+            .then(() => {
+                dispatch(editExpense(id, updates));
+            });
+    };
+};
 
 // set_expenses
 export const setExpenses = (expenses) => ({
