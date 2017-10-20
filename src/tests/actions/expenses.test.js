@@ -181,5 +181,7 @@ test("should edit expense from firebase", (done) => {
             updates
         });
         done();
+        // would like to query db and test but 
+        // bug is throwing error
     });
 });
