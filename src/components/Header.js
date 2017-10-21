@@ -12,7 +12,7 @@ export const Header = ({startLogout}) => (
     </header>
 );
 
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = (dispatch) => ({
     startLogout: () => dispatch(startLogout())
 });
 
